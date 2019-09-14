@@ -25,13 +25,13 @@ const carsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_CARS:
             return {
-                ...state, cars:[...state.cars, action.car]
+                ...state, cars:[...state.cars, action.cars]
             }
         default:
             return state
     }
 }
 
-export const setCarsSuccess = (car) => ({type: SET_CARS, car})
+export const setCarsSuccess = (cars) => ({type: SET_CARS, cars})
 
 export default carsReducer

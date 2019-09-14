@@ -27,14 +27,14 @@ const clientReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_CLIENTS:
             return {
-                ...state, clients:[...state.clients, action.client]
+                ...state, clients:[...state.clients, action.clients]
             }
         default:
             return state
     }
 }
 
-export const setClientSuccess = (client) => ({type: SET_CLIENTS, client})
+export const setClientSuccess = (clients) => ({type: SET_CLIENTS, clients})
 
 
 export default clientReducer
