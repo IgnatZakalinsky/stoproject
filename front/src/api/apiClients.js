@@ -5,12 +5,19 @@ const instance = axios.create({
 });
 
 export const clientsAPI = {
-	getClients() {
-		return instance.get(``)
-			.then(response => response.data)
+	getClient (id) {
+		return instance.get(`clients?id=${id}`)
 	},
-	postClients() {
-		return instance.post(``)
-			.then(response => response.data)
+	getClients () {
+		return instance.get(`clients `)
+	},
+	postClient () {
+		return instance.post(`clients `)
+	},
+	updateClient () {
+		return instance.put(`clients `)
+	},
+	deleteClient () {
+		return instance.delete(`clients `)
 	}
 }

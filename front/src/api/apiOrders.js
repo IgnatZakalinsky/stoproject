@@ -5,10 +5,19 @@ const instance = axios.create({
 });
 
 export const ordersAPI = {
-	getOrders () {
-		return instance.get(``)
+	getOrder () {
+		return instance.get(`orders?id=${id}`)
 	},
-	postOrders () {
-		return instance.post(``)
+	getOrders () {
+		return instance.get(`orders`)
+	},
+	postOrder () {
+		return instance.post(`orders`)
+	},
+	updateOrder () {
+		return instance.put(`orders`)
+	},
+	deleteOrder () {
+		return instance.delete(`orders`)
 	}
 }
