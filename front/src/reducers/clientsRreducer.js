@@ -1,5 +1,4 @@
-
-const GET_CLIENTS = 'stoProject/clients/GET_CLIENTS'
+const SET_CLIENTS = 'stoProject/clients/SET_CLIENTS'
 
 const initialState = {
     clients: [
@@ -26,14 +25,16 @@ const initialState = {
 
 const clientReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_CLIENTS:
+        case SET_CLIENTS:
             return {
-
+                ...state, clients:[...state.clients, action.clients]
             }
         default:
             return state
     }
 }
+
+export const setClientSuccess = (clients) => ({type: SET_CLIENTS, clients})
 
 
 export default clientReducer

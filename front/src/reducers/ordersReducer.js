@@ -1,5 +1,4 @@
-
-const GET_ORDERS = 'stoProject/orders/GET_ORDERS'
+const SET_ORDERS = 'stoProject/orders/SET_ORDERS'
 
 const initialState = {
    orders: [
@@ -29,14 +28,16 @@ const initialState = {
 
 const ordersReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_ORDERS:
+        case SET_ORDERS:
             return {
-
+                ...state, orders:[...state.orders, action.orders]
             }
         default:
             return state
     }
 }
+
+export const setCarsSuccess = (orders) => ({type: SET_ORDERS, orders})
 
 
 export default ordersReducer
