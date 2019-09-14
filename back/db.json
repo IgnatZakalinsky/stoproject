@@ -1,0 +1,13 @@
+{
+  "clients": [
+    { "id": 1, "firstName": "Ivan", "lastName": "Ivanov", "dob": "2000-01-26", "address": "Minsk", "email": "ivanov@ivan.com", "phone": "+37533435534" }  ],
+  "cars": [
+    { "id": 1, "clientId": 1, "make": "reno", "model": "stepway", "year": 2001, "vin": "HHDYS2323" },
+    { "id": 2, "clientId": 1, "make": "tesla", "model": "rodster 2", "year": 2019, "vin": "WWDYS2323" }
+  ],
+  "orders": [
+	{"id": 1, "carId": 2, "amount": 20, "status": "in-progress" },
+	{"id": 2, "carId": 2, "amount": 20, "status": "cancelled" },
+	{"id": 3, "carId": 1, "amount": 20, "status": "completed" }
+  ]
+}
