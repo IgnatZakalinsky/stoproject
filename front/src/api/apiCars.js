@@ -12,7 +12,7 @@ export const carAPI = {
 		return instance.get(`cars`)
 	},
 	postCar () {
-		return instance.post(`cars`, {cars})
+		return instance.post(`cars`)
 	},
 	updateCar () {
 		return instance.put()
