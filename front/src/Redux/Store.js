@@ -7,7 +7,7 @@ let reducers = combineReducers({
     // profilePage: profileReducer,
     // dialogsPage: dialogsReducer,
     // sidebar: sidebarReducer,
-    
+
 })
 
 let store = createStore(reducers,applyMiddleware(thunkMiddleware))
