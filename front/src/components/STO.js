@@ -1,10 +1,11 @@
 import React from 'react';
 import {Route} from "react-router-dom";
+import Clients from "./clients/Clients";
 
 function STO() {
     return (
         <div className="STO">
-            <Route path='/x' render={() => <div>x</div>}/>
+            <Route path='/clients' render={() => <Clients/>}/>
         </div>
     );
 }
