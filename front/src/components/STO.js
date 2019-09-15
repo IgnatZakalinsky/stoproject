@@ -8,6 +8,7 @@ function STO() {
     return (
         <div className="STO">
             <Home/>
+            
             <Route path='/clients' render={() => <Clients/>}/>
             <Route path='/clientProfile/:id' render={(props) => <ClientProfile id={props.match.params.id}/>}/>
         </div>
