@@ -20,14 +20,15 @@ const initialState = {
             "email": "ivanov@ivan.com",
             "phone": "+37533435534"
         }
-    ]
+    ],
+    firstName_lastName: 'ivan ivanov'
 }
 
 const clientReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_CLIENTS:
             return {
-                ...state, clients:[...state.clients, action.clients]
+                ...state, clients: action.clients
             }
         default:
             return state

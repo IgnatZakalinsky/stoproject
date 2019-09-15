@@ -10,6 +10,15 @@
       "phone": "+37533435534"
     },
     {
+      "id": 3,
+      "firstName": "Neko",
+      "lastName": "Ivanov",
+      "dob": "2000-01-26",
+      "address": "Minsk",
+      "email": "ivanov@ivan.com",
+      "phone": "+37533435534"
+    },
+    {
       "id": 2,
       "firstName": "Sidorov",
       "lastName": "Ivanov",

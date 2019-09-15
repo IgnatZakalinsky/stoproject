@@ -9,7 +9,7 @@ function STO() {
         <div className="STO">
             <Home/>
             <Route path='/clients' render={() => <Clients/>}/>
-            <Route path='/clientProfile' render={() => <ClientProfile/>}/>
+            <Route path='/clientProfile/:id' render={(props) => <ClientProfile id={props.match.params.id}/>}/>
         </div>
     );
 }
