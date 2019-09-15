@@ -21,7 +21,7 @@ const initialState = {
             "phone": "+37533435534"
         }
     ],
-    firstName_lastName: 'ivan ivanov'
+    firstName_lastName: 'n'
 }
 
 const clientReducer = (state = initialState, action) => {
