@@ -11,13 +11,9 @@ function Clients(props) {
         props.getClients()
     }, []);
 
-    let findClient = (e) => {
-        e.preventDefault()
-    }
-
     return (
         <>
-            <FindClientForm findClient={findClient}/>
+            <FindClientForm/>
             <div className="Clients">
                 {clients}
             </div>

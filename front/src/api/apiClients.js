@@ -8,8 +8,8 @@ export const clientsAPI = {
 	getClient (id) {
 		return instance.get(`clients?id=${id}`)
 	},
-	getClients () {
-		return instance.get(`clients `)
+	getClients (firstName_lastName) {
+		return instance.get(`clients?firstName_like=${firstName_lastName}`)
 	},
 	postClient () {
 		return instance.post(`clients `)
