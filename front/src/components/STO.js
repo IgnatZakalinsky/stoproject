@@ -7,7 +7,7 @@ function STO() {
     return (
         <div className="STO">
             <Route path='/clients' render={() => <Clients/>}/>
-            <Route path='/clientProfile' render={() => <ClientProfile/>}/>
+            <Route path='/clientprofile' render={() => <ClientProfile/>}/>
         </div>
     );
 }

@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from "react-redux";
-import Cars from "../cars/cars";
+import Cars from "../cars/Cars";
 import Client from "../clients/Client";
 
 function ClientProfile(props) {
-    const cars = props.cars.map(c => <Cars {...c}/>);
+//useE getCar(props.clientId
+    const cars = props.cars.map(c => <Cars {...c} orders={props.orders}/>);
 
     return (
         <div >
@@ -17,7 +18,8 @@ function ClientProfile(props) {
 let mapStateToProps = (state) => {
     return {
         clients: state.client.clients,
-        cars: state.cars.cars
+        cars: state.cars.cars,
+        orders: state.orders.orders
     };
 };
 
