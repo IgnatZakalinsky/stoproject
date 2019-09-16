@@ -5,8 +5,10 @@ import {getCar} from "./carsThunks";
 
 
 
-export const getClients = () => async (dispatch, getState) =>{
-    const res = await clientsAPI.getClients(getState().clients.firstName_lastName);
+export const getClients = (firstName,lastName) => async (dispatch, getState) =>{
+    // const res = await clientsAPI.getClients(getState().clients.firstName, getState().clients.lastName );
+    const res = await clientsAPI.getClients(firstName,lastName );
+    debugger
     dispatch(setClientSuccess(res.data));
 }
 export const getClient = (id) => async (dispatch) =>{

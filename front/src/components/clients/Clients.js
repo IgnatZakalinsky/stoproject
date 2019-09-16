@@ -8,12 +8,12 @@ function Clients(props) {
     const clients = props.clients.map(c => <Client {...c}/>);
 
     useEffect(() => {
-        props.getClients()
+        props.getClients('','')
     }, []);
 
     return (
         <>
-            <FindClientForm/>
+            <FindClientForm getClients={props.getClients}/>
             <div className="Clients">
                 {clients}
             </div>
