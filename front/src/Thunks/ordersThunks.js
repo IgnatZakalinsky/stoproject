@@ -16,9 +16,9 @@ export const addOrder = (carId,clientId) => async (dispatch) =>{
 		"clientId": clientId,
 		"amount": 20,
 		"status": "in-progress",
-		"editMode": false
+		"editMode": true
 	});
-	console.log(res)
+
 	dispatch(addOrderSuccess(res.data));//cюда записываем ActionCreator(в скобочкач..
 	// пишем то что придет с сервера
 }

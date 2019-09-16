@@ -9,7 +9,7 @@ const initialState = {
             "clientId": 1,
             "amount": 20,
             "status": "in-progress",
-            "editMode": false
+            "editMode": true
         },
         {
             "id": 2,
@@ -17,7 +17,7 @@ const initialState = {
             "clientId": 1,
             "amount": 20,
             "status": "cancelled",
-            "editMode": false
+            "editMode": true
         },
         {
             "id": 3,
@@ -25,7 +25,7 @@ const initialState = {
             "clientId": 1,
             "amount": 20,
             "status": "completed",
-            "editMode": false
+            "editMode": true
         }
     ]
 }

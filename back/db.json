@@ -82,8 +82,8 @@
       "id": 4
     },
     {
-      "carId": 2,
-      "clientId": "1",
+      "carId": 1,
+      "clientId": "2",
       "amount": 20,
       "status": "in-progress",
       "editMode": false,
@@ -96,6 +96,22 @@
       "status": "in-progress",
       "editMode": false,
       "id": 6
+    },
+    {
+      "carId": 2,
+      "clientId": "1",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": true,
+      "id": 7
+    },
+    {
+      "carId": 2,
+      "clientId": "1",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": true,
+      "id": 8
     }
   ]
 }

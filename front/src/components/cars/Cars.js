@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import {getOrders} from "../../Thunks/ordersThunks";
 import {changeCar} from "../../reducers/carsReducer";
 import AddOrder from "../EditOrder/AddOrder";
+import EditOrder from "../EditOrder/EditOrder";
 
 function Cars(props) {
 
@@ -14,7 +15,9 @@ function Cars(props) {
 	// 	props.getCars()
 	// }, []);
 
-    const order = props.orders.map(o => <Order {...o}/>);
+    const order = props.orders.map(o => {
+    	 if(o.editMode === true) return <EditOrder {...o}/>
+    	return<Order {...o}/>});
 
 	useEffect(() => {
 		props.getOrders(props.id)
