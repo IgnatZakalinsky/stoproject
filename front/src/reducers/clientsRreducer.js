@@ -1,8 +1,7 @@
 const SET_CLIENTS = 'stoProject/clients/SET_CLIENTS'
 
 const initialState = {
-    clients: [{}],
-    firstName_lastName: ''
+    clients: [],
 }
 
 const clientReducer = (state = initialState, action) => {
