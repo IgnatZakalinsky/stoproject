@@ -10,6 +10,7 @@ let reducers = combineReducers({
     clients: clientReducer,
     orders: ordersReducer
 
+
 })
 
 let store = createStore(reducers,applyMiddleware(thunkMiddleware))

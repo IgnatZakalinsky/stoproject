@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Client.module.css'
 import {NavLink} from "react-router-dom";
-import EditOrder from "../EditOrder/EditOrder";
 
 function Client(props) {
     const data = Object.entries(props).map((d, i) => <div className={styles.column} key={i}>

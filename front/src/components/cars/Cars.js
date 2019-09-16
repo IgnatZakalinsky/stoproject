@@ -2,10 +2,9 @@ import React, {useEffect } from 'react';
 import Order from "../orders/Order";
 import Car from "./Car";
 import {connect} from "react-redux";
-import {getClient} from "../../Thunks/clientsThunks";
-import {getCar} from "../../Thunks/carsThunks";
 import {getOrders} from "../../Thunks/ordersThunks";
 import AddOrder from "../EditOrder/AddOrder";
+import EditOrder from "../EditOrder/EditOrder";
 
 function Cars(props) {
 
@@ -15,7 +14,9 @@ function Cars(props) {
 	// 	props.getCars()
 	// }, []);
 
-    const order = props.orders.map(o => <Order {...o}/>);
+    const order = props.orders.map(o => {
+    	 if(o.editMode === true) return <EditOrder {...o}/>
+    	return<Order {...o}/>});
 
 	useEffect(() => {
 		props.getOrders(props.id)
