@@ -35,7 +35,8 @@
       "make": "reno",
       "model": "stepway",
       "year": 2001,
-      "vin": "HHDYS2323"
+      "vin": "HHDYS2323",
+      "editMode": false
     },
     {
       "id": 2,
@@ -43,7 +44,8 @@
       "make": "tesla",
       "model": "rodster 2",
       "year": 2019,
-      "vin": "WWDYS2323"
+      "vin": "WWDYS2323",
+      "editMode": false
     }
   ],
   "orders": [
@@ -52,21 +54,48 @@
       "carId": 2,
       "clientId": 1,
       "amount": 20,
-      "status": "in-progress"
+      "status": "in-progress",
+      "editMode": false
     },
     {
       "id": 2,
       "carId": 2,
       "clientId": 1,
       "amount": 20,
-      "status": "cancelled"
+      "status": "cancelled",
+      "editMode": false
     },
     {
       "id": 3,
       "carId": 1,
       "clientId": 1,
       "amount": 20,
-      "status": "completed"
+      "status": "completed",
+      "editMode": false
+    },
+    {
+      "carId": 2,
+      "clientId": "1",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": false,
+      "id": 4
+    },
+    {
+      "carId": 2,
+      "clientId": "1",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": false,
+      "id": 5
+    },
+    {
+      "carId": 2,
+      "clientId": "1",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": false,
+      "id": 6
     }
   ]
 }

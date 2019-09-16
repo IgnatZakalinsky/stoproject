@@ -4,6 +4,7 @@ import Car from "./Car";
 import {connect} from "react-redux";
 import {getOrders} from "../../Thunks/ordersThunks";
 import {changeCar} from "../../reducers/carsReducer";
+import AddOrder from "../EditOrder/AddOrder";
 
 function Cars(props) {
 
@@ -23,6 +24,8 @@ function Cars(props) {
         <div >
 			{props.cars.map(c=><Car car={c} {...props} />)}
 	       {order}
+	       <AddOrder carId={props.id} clientId={props.clientId}/>
+
         </div>
     );
 }
