@@ -23,7 +23,7 @@ function Clients(props) {
 
 let mapStateToProps = (state) => {
     return {
-        clients: state.client.clients
+        clients: state.clients.clients
     };
 };
 

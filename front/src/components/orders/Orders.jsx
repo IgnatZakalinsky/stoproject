@@ -5,6 +5,7 @@ import {getOrders} from "../../Thunks/ordersThunks";
 import Order from "./Order";
 
 function Orders(props) {
+
 	const orders = props.orders.map(c => <Order {...c}/>);
 
 	useEffect(() => {

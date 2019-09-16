@@ -3,11 +3,12 @@ import React from 'react';
 function Order(props) {
 	return (
 		<div >
-			<span>id: </span><div>{props.id}</div>
-			<span>carId: </span><div>{props.carId}</div>
-			<span>clientId: </span><div>{props.clientId}</div>
-			<span>amount: </span><div>{props.amount}</div>
-			<span>status: </span><div>{props.status}</div>
+			<div>Order</div>
+			<div><span>id: {props.id}</span></div>
+			<div><span>carId: {props.carId}</span></div>
+			<div><span>clientId: {props.clientId}</span></div>
+			<div><span>amount: {props.amount}</span></div>
+			<div><span>status: {props.status}</span></div>
 		</div>
 
 	);

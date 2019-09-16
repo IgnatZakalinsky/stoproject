@@ -7,7 +7,7 @@ import ordersReducer from "../reducers/ordersReducer";
 
 let reducers = combineReducers({
     cars: carsReducer,
-    client: clientReducer,
+    clients: clientReducer,
     orders: ordersReducer
 
 })

@@ -4,7 +4,7 @@ import {setOrdersSuccess} from "../reducers/ordersReducer";
 
 
 
-export const getOrders = () => async (dispatch) =>{
-	const orders = await ordersAPI.getOrders();
-	dispatch(setOrderSuccess(orders));
+export const getOrders = (carId) => async (dispatch) =>{
+	const res = await ordersAPI.getOrders(carId);
+	dispatch(setOrdersSuccess(res.data));
 }
