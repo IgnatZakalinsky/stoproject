@@ -2,9 +2,8 @@ import React, {useEffect } from 'react';
 import Order from "../orders/Order";
 import Car from "./Car";
 import {connect} from "react-redux";
-import {getClient} from "../../Thunks/clientsThunks";
-import {getCar} from "../../Thunks/carsThunks";
 import {getOrders} from "../../Thunks/ordersThunks";
+import {changeCar} from "../../reducers/carsReducer";
 
 function Cars(props) {
 
@@ -22,7 +21,7 @@ function Cars(props) {
 
     return (
         <div >
-	       <Car {...props} />
+			{props.cars.map(c=><Car car={c} {...props} />)}
 	       {order}
         </div>
     );
@@ -30,11 +29,12 @@ function Cars(props) {
 
 let mapStateToProps = (state) => {
 	return {
-		orders: state.orders.orders
+		orders: state.orders.orders,
+		isChangeCar: state.cars.isChangeCar
 	};
 };
 
- export default connect(mapStateToProps, {getOrders})(Cars);
+ export default connect(mapStateToProps, {getOrders, changeCar})(Cars);
 
 //export default Cars;
 

@@ -5,8 +5,7 @@ import {getCar} from "./carsThunks";
 
 
 
-export const getClients = (firstName,lastName) => async (dispatch, getState) =>{
-    // const res = await clientsAPI.getClients(getState().clients.firstName, getState().clients.lastName );
+export const getClients = (firstName,lastName) => async (dispatch) =>{
     const res = await clientsAPI.getClients(firstName,lastName );
     debugger
     dispatch(setClientSuccess(res.data));
@@ -14,7 +13,6 @@ export const getClients = (firstName,lastName) => async (dispatch, getState) =>{
 export const getClient = (id) => async (dispatch) =>{
     const res = await clientsAPI.getClient(id);
     dispatch(setClientSuccess(res.data));
-    console.log(res)
     dispatch(getCar(res.data[0].id));
 
 }

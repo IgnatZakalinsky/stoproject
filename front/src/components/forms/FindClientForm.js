@@ -12,7 +12,7 @@ const FindClientForm = (props) => {
         props.getClients(firstName, lastName)
     }
 
-    
+
     return (
         <>
             <form>

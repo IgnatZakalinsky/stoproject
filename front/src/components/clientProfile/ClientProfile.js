@@ -12,7 +12,7 @@ function ClientProfile(props) {
 		props.getClient(props.id)
 	}, [props.id]);
 
-	const cars = props.cars.map(c => <Cars {...c}/>);
+	const cars = props.cars.map(c => <Cars cars={props.cars} {...c}/>);
 
 	return (
 		<div>
