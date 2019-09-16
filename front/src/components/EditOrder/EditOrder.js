@@ -1,6 +1,8 @@
 import React from 'react'
 import Field from "redux-form/es/Field";
 import {reduxForm} from "redux-form";
+import {connect} from "react-redux";
+import { updateOrder} from "../../Thunks/ordersThunks";
 
 
 let SaveOrders = (props) => {
@@ -24,11 +26,11 @@ let SaveOrders = (props) => {
 
 const CreateReduxForm = reduxForm({form: 'save'})(SaveOrders)
 
+
 let EditOrder = (props) => {
-
-
     let onSubmit = (formData) => {
-          alert('dschasbsabkjd,asn,dasnnsa,cnas,casn,c')
+
+          props.updateOrder(formData,props.carId,props.clientId, props.id)
     }
     return (
         <div>
@@ -37,5 +39,5 @@ let EditOrder = (props) => {
     )
 }
 
-export default EditOrder
+export default connect(null,{updateOrder})(EditOrder)
 

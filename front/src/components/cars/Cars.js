@@ -16,7 +16,7 @@ function Cars(props) {
 	// }, []);
 
     const order = props.orders.map(o => {
-    	 if(o.editMode === true) return <EditOrder {...o}/>
+    	 if(o.editMode === true) return <EditOrder {...o} />
     	return<Order {...o}/>});
 
 	useEffect(() => {
