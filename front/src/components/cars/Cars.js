@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import {getClient} from "../../Thunks/clientsThunks";
 import {getCar} from "../../Thunks/carsThunks";
 import {getOrders} from "../../Thunks/ordersThunks";
+import AddOrder from "../EditOrder/AddOrder";
 
 function Cars(props) {
 
@@ -24,6 +25,8 @@ function Cars(props) {
         <div >
 	       <Car {...props} />
 	       {order}
+	       <AddOrder carId={props.id} clientId={props.clientId}/>
+
         </div>
     );
 }

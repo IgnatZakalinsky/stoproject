@@ -1,29 +1,33 @@
 const SET_ORDERS = 'stoProject/orders/SET_ORDERS'
+const ADD_ORDER = 'stoProject/orders/ADD_ORDER'
 
 const initialState = {
-   orders: [
-       {
-           "id": 1,
-           "carId": 2,
-           "clientId": 1,
-           "amount": 20,
-           "status": "in-progress"
-       },
-       {
-           "id": 2,
-           "carId": 2,
-           "clientId": 1,
-           "amount": 20,
-           "status": "cancelled"
-       },
-       {
-           "id": 3,
-           "carId": 1,
-           "clientId": 1,
-           "amount": 20,
-           "status": "completed"
-       }
-   ]
+    orders: [
+        {
+            "id": 1,
+            "carId": 2,
+            "clientId": 1,
+            "amount": 20,
+            "status": "in-progress",
+            "editMode": false
+        },
+        {
+            "id": 2,
+            "carId": 2,
+            "clientId": 1,
+            "amount": 20,
+            "status": "cancelled",
+            "editMode": false
+        },
+        {
+            "id": 3,
+            "carId": 1,
+            "clientId": 1,
+            "amount": 20,
+            "status": "completed",
+            "editMode": false
+        }
+    ]
 }
 
 const ordersReducer = (state = initialState, action) => {
@@ -33,12 +37,20 @@ const ordersReducer = (state = initialState, action) => {
                 ...state,
                 orders: action.orders
             };
+        case ADD_ORDER:
+            return {
+                ...state,
+                orders: [...state.orders,
+                    action.fakeorder
+                ]
+            };
         default:
             return state
     }
 }
 
 export const setOrdersSuccess = (orders) => ({type: SET_ORDERS, orders})
+export const addOrderSuccess = (fakeorder) => ({type: ADD_ORDER, fakeorder})
 
 
 export default ordersReducer
