@@ -1,8 +1,11 @@
 const SET_CLIENTS = 'stoProject/clients/SET_CLIENTS'
+const SET_REDIRECT = 'stoProject/clients/SET_REDIRECT'
 
 const initialState = {
     clients: [{}],
-    firstName_lastName: ''
+    firstName_lastName: '',
+    red: false,
+    redid: 1
 }
 
 const clientReducer = (state = initialState, action) => {
@@ -12,12 +15,19 @@ const clientReducer = (state = initialState, action) => {
                 ...state,
                 clients: action.clients
             };
+        case SET_REDIRECT:
+            return {
+                ...state,
+                redid: action.id,
+                red: true
+            };
         default:
             return state
     }
 }
 
 export const setClientSuccess = (clients) => ({type: SET_CLIENTS, clients})
+export const setRedirect = (id) => ({type: SET_REDIRECT, id})
 
 
 export default clientReducer
