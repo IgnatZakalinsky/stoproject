@@ -35,20 +35,15 @@
       "make": "reno",
       "model": "stepway",
       "year": 2001,
-      "vin": "HHDYS2323",
-      "editMode": false
-    },
-    {
-      "id": 3
+      "vin": "HHDYS2323"
     },
     {
       "clientId": "1",
-      "make": "new",
-      "model": "new",
+      "make": "new car",
+      "model": "new model",
       "year": 2019,
       "vin": 77777,
-      "editMode": true,
-      "id": 5
+      "id": 2
     }
   ],
   "orders": [
@@ -109,6 +104,20 @@
       "amount": "weewew",
       "status": "cancelled",
       "editMode": false
+    },
+    {
+      "clientId": "1",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": true,
+      "id": 14
+    },
+    {
+      "clientId": "1",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": true,
+      "id": 15
     }
   ]
 }
