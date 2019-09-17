@@ -8,7 +8,7 @@ const Car = (props) => {
 
     let changeCar = (formData) => {
         props.changeCar(false)
-
+        props.updateCar(formData.id,formData)
     }
 
     return (

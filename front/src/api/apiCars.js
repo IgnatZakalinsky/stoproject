@@ -14,8 +14,8 @@ export const carAPI = {
 	postCar () {
 		return instance.post(`cars`)
 	},
-	updateCar () {
-		return instance.put()
+	updateCar (id,newCar) {debugger
+		return instance.put(`cars/${id}`,newCar)
 	},
 	deleteCar () {
 		return instance.delete()

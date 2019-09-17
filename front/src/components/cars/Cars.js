@@ -6,6 +6,7 @@ import {getOrders} from "../../Thunks/ordersThunks";
 import {changeCar} from "../../reducers/carsReducer";
 import AddOrder from "../EditOrder/AddOrder";
 import EditOrder from "../EditOrder/EditOrder";
+import {updateCar} from "../../Thunks/carsThunks";
 
 function Cars(props) {
 
@@ -40,7 +41,7 @@ let mapStateToProps = (state) => {
 	};
 };
 
- export default connect(mapStateToProps, {getOrders, changeCar})(Cars);
+ export default connect(mapStateToProps, {getOrders, changeCar,updateCar})(Cars);
 
 //export default Cars;
 

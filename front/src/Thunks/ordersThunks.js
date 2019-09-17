@@ -22,7 +22,6 @@ export const addOrder = (carId, clientId) => async (dispatch) => {
 }
 
 export const updateOrder = (formdata, carId = 1, clientId = 1, id) => async (dispatch) => {
-    console.log(formdata)
     const res = await ordersAPI.updateOrder({//отправляем на сервер
             id: id,
             "carId": carId,
