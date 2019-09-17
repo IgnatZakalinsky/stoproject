@@ -83,7 +83,31 @@
       "id": 11,
       "carId": 1,
       "clientId": "1",
+      "amount": "SAS",
+      "status": "in-progress",
+      "editMode": false
+    },
+    {
+      "id": 12,
+      "carId": 1,
+      "clientId": "1",
       "amount": "12000",
+      "status": "in-progress",
+      "editMode": true
+    },
+    {
+      "id": 11,
+      "carId": 1,
+      "clientId": "1",
+      "amount": "12000",
+      "editMode": false
+    },
+    {
+      "id": 13,
+      "carId": 1,
+      "clientId": "2",
+      "amount": "weewew",
+      "status": "cancelled",
       "editMode": false
     }
   ]
