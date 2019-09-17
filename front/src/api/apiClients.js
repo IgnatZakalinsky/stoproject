@@ -19,8 +19,8 @@ export const clientsAPI = {
 			"email": "ivanov@ivan.com",
 			"phone": "+37533435534"})
 	},
-	updateClient () {
-		return instance.put(`clients `)
+	updateClient (newClient, idClient ) {
+		return instance.put(`clients/${idClient}`, newClient)
 	},
 	deleteClient () {
 		return instance.delete(`clients `)
