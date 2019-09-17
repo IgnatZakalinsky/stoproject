@@ -2,7 +2,7 @@ import React, {useEffect } from 'react';
 import Order from "../orders/Order";
 import Car from "./Car";
 import {connect} from "react-redux";
-import {getOrders} from "../../Thunks/ordersThunks";
+import {deleteOrder, getOrders} from "../../Thunks/ordersThunks";
 import {addNewCarForm, changeCar} from "../../reducers/carsReducer";
 import AddOrder from "../EditOrder/AddOrder";
 import EditOrder from "../EditOrder/EditOrder";
@@ -20,7 +20,7 @@ function Cars(props) {
 
     const order = props.orders.map((o,i) => {
     	 if(o.editMode === true) return <EditOrder {...o} key={i} selectOrderSuccess={props.selectOrderSuccess} />
-    	return<Order key={i} editModeSuccsess={props.editModeSuccsess} {...o}/>});
+    	return<Order deleteOrder={props.deleteOrder} key={i} editModeSuccsess={props.editModeSuccsess} {...o}/>});
 
     useEffect(() => {
         props.getOrders(props.id)
@@ -88,6 +88,6 @@ CarAddForm = reduxForm({
     form: 'carForm'
 })(CarAddForm)
 
-export default connect(mapStateToProps, {getOrders,editModeSuccsess, changeCar, updateCar,addNewCarForm})(Cars);
+export default connect(mapStateToProps, {deleteOrder,getOrders,editModeSuccsess, changeCar, updateCar,addNewCarForm})(Cars);
 
 

@@ -50,41 +50,16 @@
   ],
   "orders": [
     {
-      "id": 1,
-      "carId": 2,
-      "clientId": 1,
-      "amount": "111111",
-      "status": "cancelled",
-      "editMode": false
-    },
-    {
-      "id": 2,
-      "carId": 2,
-      "clientId": 1,
-      "amount": 20,
-      "status": "cancelled",
-      "editMode": false
-    },
-    {
       "id": 3,
       "carId": 1,
       "clientId": 1,
       "editMode": false
     },
     {
-      "id": 4,
+      "id": 5,
       "carId": 2,
       "clientId": "1",
-      "status": "in-progress",
       "editMode": false
-    },
-    {
-      "carId": 2,
-      "clientId": "1",
-      "amount": 20,
-      "status": "in-progress",
-      "editMode": true,
-      "id": 5
     },
     {
       "carId": 2,
@@ -95,10 +70,12 @@
       "id": 6
     },
     {
-      "id": 7,
       "carId": 2,
       "clientId": "1",
-      "editMode": false
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": true,
+      "id": 7
     }
   ]
 }
