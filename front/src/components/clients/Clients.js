@@ -8,7 +8,7 @@ import {Redirect} from "react-router-dom";
 
 function Clients(props) {
     useEffect(()=>{
-        props.getClients()
+        props.getClients('', '')
     },[])
 
     const clients = props.clients.map(c => <Client {...c}/>);
@@ -17,7 +17,7 @@ function Clients(props) {
    if (props.red === true) return <Redirect to={`clientProfile/${props.redid}`} />;
     return (
         <>
-            <FindClientForm/>
+            <FindClientForm getClients={props.getClients}/>
             <div className="Clients">
                 {clients}
             </div>

@@ -87,9 +87,9 @@ let CarAddForm = props => {
 
 CarAddForm = reduxForm({
     form: 'addNewCarForm'
-})(CarAddForm)
+})(CarAddForm);
 
-export default connect(mapStateToProps, {deleteOrder,getOrders,editModeSuccsess, changeCar, updateCar,addNewCarForm})(Cars);
-export default connect(mapStateToProps, {getOrders, addNewCar, changeCar, updateCar,addNewCarForm, deleteCar})(Cars);
+export default connect(mapStateToProps, {deleteCar, addNewCar, deleteOrder,getOrders,editModeSuccsess, changeCar, updateCar,addNewCarForm})(Cars);
+
 
 
