@@ -6,6 +6,7 @@ import {getOrders} from "../../Thunks/ordersThunks";
 import {changeCar} from "../../reducers/carsReducer";
 import AddOrder from "../EditOrder/AddOrder";
 import EditOrder from "../EditOrder/EditOrder";
+import {selectOrderSuccess} from "../../reducers/ordersReducer";
 
 function Cars(props) {
 
@@ -15,9 +16,9 @@ function Cars(props) {
 	// 	props.getCars()
 	// }, []);
 
-    const order = props.orders.map(o => {
-    	 if(o.editMode === true) return <EditOrder {...o} />
-    	return<Order {...o}/>});
+    const order = props.orders.map((o,i) => {
+    	 if(o.editMode === true) return <EditOrder {...o} key={i} selectOrderSuccess={props.selectOrderSuccess} />
+    	return<Order key={i}  {...o}/>});
 
 	useEffect(() => {
 		props.getOrders(props.id)
@@ -40,7 +41,7 @@ let mapStateToProps = (state) => {
 	};
 };
 
- export default connect(mapStateToProps, {getOrders, changeCar})(Cars);
+ export default connect(mapStateToProps, {getOrders, changeCar, selectOrderSuccess})(Cars);
 
 //export default Cars;
 

@@ -1,6 +1,7 @@
 const SET_ORDERS = 'stoProject/orders/SET_ORDERS'
 const ADD_ORDER = 'stoProject/orders/ADD_ORDER'
 const EDIT_ORDER = 'stoProject/orders/EDIT_ORDER'
+const SELECT_ORDER = 'stoProject/orders/SELECT_ORDER'
 
 const initialState = {
     orders: [
@@ -48,11 +49,20 @@ const ordersReducer = (state = initialState, action) => {
         case EDIT_ORDER:
             return {
                 ...state,
-                orders: state.orders.map(o =>{
-                    if(o.id === action.newOrder.id) return  action.newOrder
+                orders: state.orders.map(o => {
+                    if (o.id === action.newOrder.id) return action.newOrder
                     return o
                 })
             };
+        case SELECT_ORDER:
+            return {
+                ...state,
+                orders: state.orders.map(o => {
+                    if (o.id === action.id) return {...o, status: action.newstatus}
+                    return o
+                })
+            };
+
         default:
             return state
     }
@@ -61,6 +71,7 @@ const ordersReducer = (state = initialState, action) => {
 export const setOrdersSuccess = (orders) => ({type: SET_ORDERS, orders})
 export const addOrderSuccess = (fakeorder) => ({type: ADD_ORDER, fakeorder})
 export const editOrderSuccess = (newOrder) => ({type: EDIT_ORDER, newOrder})
+export const selectOrderSuccess = (newstatus, id) => ({type: SELECT_ORDER, newstatus, id})
 
 
 export default ordersReducer

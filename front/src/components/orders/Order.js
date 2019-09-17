@@ -8,7 +8,7 @@ function Order(props) {
 			<div><span>carId: {props.carId}</span></div>
 			<div><span>clientId: {props.clientId}</span></div>
 			<div><span>amount: {props.amount}</span></div>
-			<div><span>status: {props.status}</span></div>
+			<div>status: <span>{props.status}</span></div>
 		</div>
 
 	);

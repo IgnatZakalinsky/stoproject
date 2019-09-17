@@ -22,7 +22,6 @@ export const addOrder = (carId, clientId) => async (dispatch) => {
 }
 
 export const updateOrder = (formdata, carId = 1, clientId = 1, id) => async (dispatch) => {
-    console.log(formdata)
     const res = await ordersAPI.updateOrder({//отправляем на сервер
             id: id,
             "carId": carId,
@@ -37,5 +36,21 @@ export const updateOrder = (formdata, carId = 1, clientId = 1, id) => async (dis
     dispatch(editOrderSuccess(res.data));//cюда записываем ActionCreator(в скобочкач..
     // пишем то что придет с сервера
 }
+
+
+
+
+// export const selectOrder = (newstatus) => async (dispatch) => {
+//     const res = await ordersAPI.selectOrder({//отправляем на сервер
+//
+//             "status": status.newstatus,
+//
+//         },
+//         id);
+//
+//
+//     dispatch(selectOrderSuccess(res.data));//cюда записываем ActionCreator(в скобочкач..
+//     // пишем то что придет с сервера
+// }
 
 
