@@ -3,6 +3,7 @@ const CHANGE_CAR = 'stoProject/cars/CHANGE_CAR'
 const ADD_NEW_FORM_CAR = 'stoProject/cars/ADD_NEW_FORM_CAR'
 const UPDATE_CAR = 'stoProject/cars/UPDATE_CAR'
 const ADD_NEW_CAR = 'stoProject/cars/ADD_NEW_CAR'
+const DELETE_CAR = 'stoProject/cars/DELETE_CAR'
 
 const initialState = {
     cars: [
@@ -36,10 +37,15 @@ const carsReducer = (state = initialState, action) => {
                     return c
                 })
             };
-        case ADD_NEW_CAR:debugger
+        case ADD_NEW_CAR:
             return {
                 ...state,
                 cars: [...state.cars, action.newCar]
+            };
+        case DELETE_CAR:
+            return {
+                ...state,
+                cars: state.cars.filter(c=> c.id!==action.id)
             };
         default:
             return state
@@ -51,5 +57,6 @@ export const changeCar = (status) => ({type: CHANGE_CAR, status})
 export const addNewCarForm = (status) => ({type: ADD_NEW_FORM_CAR, status})
 export const updateCarSuccess = (newCar) => ({type: UPDATE_CAR, newCar})
 export const addCarSuccess = (newCar) => ({type: ADD_NEW_CAR, newCar})
+export const deleteCarSuccess = (id) => ({type: DELETE_CAR, id})
 
 export default carsReducer

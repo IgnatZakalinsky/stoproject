@@ -6,7 +6,7 @@ import {getOrders} from "../../Thunks/ordersThunks";
 import {addNewCarForm, changeCar} from "../../reducers/carsReducer";
 import AddOrder from "../EditOrder/AddOrder";
 import EditOrder from "../EditOrder/EditOrder";
-import {addNewCar, updateCar} from "../../Thunks/carsThunks";
+import {addNewCar, deleteCar, updateCar} from "../../Thunks/carsThunks";
 import {Field, reduxForm} from "redux-form";
 import {editModeSuccsess} from "../../reducers/ordersReducer";
 
@@ -17,7 +17,7 @@ function Cars(props) {
         return <Order {...o}/>
     });
 
-    const cars=props.cars.map(c => <Car {...c} updateCar={props.updateCar} isChangeCar={props.isChangeCar} changeCar={props.changeCar}/>)
+    const cars=props.cars.map(c => <Car key={c.id} {...c} deleteCar={props.deleteCar} updateCar={props.updateCar} isChangeCar={props.isChangeCar} changeCar={props.changeCar}/>)
 
 
     useEffect(() => {
@@ -77,8 +77,6 @@ let CarAddForm = props => {
                 <Field name="editMode" component="input" type="checkbox"/>
             </div>
             <button type="submit">Add car</button>
-        </form>
-
     </form>
 }
 
@@ -86,6 +84,6 @@ CarAddForm = reduxForm({
     form: 'addNewCarForm'
 })(CarAddForm)
 
-export default connect(mapStateToProps, {getOrders, changeCar, updateCar,addNewCarForm})(Cars);
+export default connect(mapStateToProps, {getOrders, addNewCar, changeCar, updateCar,addNewCarForm, deleteCar})(Cars);
 
 
