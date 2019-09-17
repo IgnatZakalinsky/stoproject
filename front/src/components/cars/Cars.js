@@ -14,7 +14,7 @@ function Cars(props) {
 
     const order = props.orders.map(o => {
         if (o.editMode === true) return <EditOrder {...o} />
-        return <Order deleteOrder={props.deleteOrder} {...o}/>
+        return <Order editModeSuccsess={props.editModeSuccsess} deleteOrder={props.deleteOrder} {...o}/>
     });
 
     const cars=props.cars.map(c => <Car key={c.id} {...c} deleteCar={props.deleteCar} updateCar={props.updateCar} isChangeCar={props.isChangeCar} changeCar={props.changeCar}/>)
