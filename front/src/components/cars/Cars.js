@@ -35,7 +35,6 @@ function Cars(props) {
                 ? <CarAddForm onSubmit={addNewCar}/>
                 : <button onClick={()=>props.addNewCarForm(true)}>add new car </button>
             }
-
             {cars}
             {order}
             <AddOrder carId={props.id} clientId={props.clientId}/>

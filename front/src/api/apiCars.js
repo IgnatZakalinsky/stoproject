@@ -8,16 +8,13 @@ export const carAPI = {
 		console.log(clientId)
 		return instance.get(`cars?clientId=${clientId}`)
 	},
-	getCars () {
-		return instance.get(`cars`)
-	},
 	addCar (newCar) {
 		return instance.post(`cars`,newCar)
 	},
-	updateCar (id,newCar) {
-		return instance.put(`cars/${id}`,newCar)
+	updateCar (idCar,newCar) {
+		return instance.put(`cars/${idCar}`,newCar)
 	},
-	deleteCar (id) {
-		return instance.delete(`cars/${id}`)
+	deleteCar (idCar) {
+		return instance.delete(`cars/${idCar}`)
 	}
 }

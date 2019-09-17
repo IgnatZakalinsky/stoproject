@@ -18,17 +18,9 @@ export const deleteCar = (id) => async (dispatch) =>{
 }
 
 export const addNewCar = (clientId, car) => async (dispatch) =>{
-	let {make='new',model='new',year=2019,vin=77777,editMode=true}=car
+	let {make='new car',model='new model',year=2019,vin=77777,editMode=true}=car
+	let newCar={clientId, make, model, year, vin, editMode}
 
-	let newCar={
-		clientId: clientId,
-		make: make,
-		model: model,
-		year: year,
-		vin: vin,
-		editMode: editMode
-	}
-
-	const res = await carAPI.addCar(newCar);
+	await carAPI.addCar(newCar);
 	dispatch(addCarSuccess(newCar));
 }

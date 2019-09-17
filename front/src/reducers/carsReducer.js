@@ -1,5 +1,5 @@
 const SET_CARS = 'stoProject/cars/SET_CARS'
-const ADD_NEW_FORM_CAR = 'stoProject/cars/ADD_NEW_FORM_CAR'
+const SHOW_FORM_ADD_CAR = 'stoProject/cars/SHOW_FORM_ADD_CAR'
 const UPDATE_CAR = 'stoProject/cars/UPDATE_CAR'
 const ADD_NEW_CAR = 'stoProject/cars/ADD_NEW_CAR'
 const DELETE_CAR = 'stoProject/cars/DELETE_CAR'
@@ -17,7 +17,7 @@ const carsReducer = (state = initialState, action) => {
                 ...state,
                 cars: action.cars
             };
-        case ADD_NEW_FORM_CAR:
+        case SHOW_FORM_ADD_CAR:
             return {
                 ...state,
                 showFormAddNewCar: action.status
@@ -46,7 +46,7 @@ const carsReducer = (state = initialState, action) => {
 }
 
 export const setCarsSuccess = (cars) => ({type: SET_CARS, cars})
-export const addNewCarForm = (status) => ({type: ADD_NEW_FORM_CAR, status})
+export const addNewCarForm = (status) => ({type: SHOW_FORM_ADD_CAR, status})
 export const updateCarSuccess = (newCar) => ({type: UPDATE_CAR, newCar})
 export const addCarSuccess = (newCar) => ({type: ADD_NEW_CAR, newCar})
 export const deleteCarSuccess = (id) => ({type: DELETE_CAR, id})
