@@ -5,6 +5,7 @@ function Home() {
     return (
         <div className="Home" style={{background: 'lime'}}>
             STO <NavLink to={'/clients'}><button>Clients</button></NavLink>
+
         </div>
     );
 }

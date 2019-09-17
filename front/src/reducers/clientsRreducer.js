@@ -27,7 +27,6 @@ const clientReducer = (state = initialState, action) => {
 }
 
 export const setClientSuccess = (clients) => ({type: SET_CLIENTS, clients})
-export const setRedirect = (id) => ({type: SET_REDIRECT, id})
 
 
 export default clientReducer

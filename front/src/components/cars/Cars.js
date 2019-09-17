@@ -1,40 +1,91 @@
-import React, {useEffect } from 'react';
+import React, {useEffect} from 'react';
 import Order from "../orders/Order";
 import Car from "./Car";
 import {connect} from "react-redux";
-import {getClient} from "../../Thunks/clientsThunks";
-import {getCar} from "../../Thunks/carsThunks";
 import {getOrders} from "../../Thunks/ordersThunks";
+import {addNewCarForm, changeCar} from "../../reducers/carsReducer";
+import AddOrder from "../EditOrder/AddOrder";
+import EditOrder from "../EditOrder/EditOrder";
+import {addNewCar, updateCar} from "../../Thunks/carsThunks";
+import {Field, reduxForm} from "redux-form";
+import {editModeSuccsess} from "../../reducers/ordersReducer";
 
 function Cars(props) {
 
-    //useE getOr(props.carId)
+    const order = props.orders.map(o => {
+        if (o.editMode === true) return <EditOrder {...o} />
+        return <Order {...o}/>
+    });
 
-	// useEffect(() => {
-	// 	props.getCars()
-	// }, []);
+    const cars=props.cars.map(c => <Car {...c} updateCar={props.updateCar} isChangeCar={props.isChangeCar} changeCar={props.changeCar}/>)
 
-    const order = props.orders.map(o => <Order {...o}/>);
 
-	useEffect(() => {
-		props.getOrders(props.id)
-	}, [props.id])
+    useEffect(() => {
+        props.getOrders(props.id)
+    }, [props.id])
+
+    let addNewCar = (newCar) => {
+        props.addNewCar(props.clientId,newCar)
+        props.addNewCarForm(false)
+    }
 
     return (
-        <div >
-	       <Car {...props} />
-	       {order}
+        <div>
+            {props.showFormAddNewCar
+                ? <CarAddForm onSubmit={addNewCar}/>
+                : <button onClick={()=>props.addNewCarForm(true)}>add new car </button>
+            }
+
+            {cars}
+            {order}
+            <AddOrder carId={props.id} clientId={props.clientId}/>
         </div>
     );
 }
 
 let mapStateToProps = (state) => {
-	return {
-		orders: state.orders.orders
-	};
+    return {
+        orders: state.orders.orders,
+        isChangeCar: state.cars.isChangeCar,
+        showFormAddNewCar: state.cars.showFormAddNewCar
+    };
 };
 
- export default connect(mapStateToProps, {getOrders})(Cars);
 
-//export default Cars;
+let CarAddForm = props => {
+    const {handleSubmit} = props
+    return <form onSubmit={handleSubmit}>
+            <h3>All fields must be filled</h3>
+            <div>
+                <label htmlFor="make">make:</label>
+                <Field name="make" component="input" type="text"/>
+            </div>
+            <div>
+                <label htmlFor="model">model:</label>
+                <Field name="model" component="input" type="text"/>
+            </div>
+            <div>
+                <label htmlFor="year">year:</label>
+                <Field name="year" component="input" type="text"/>
+            </div>
+            <div>
+                <label htmlFor="vin">vin:</label>
+                <Field name="vin" component="input" type="text"/>
+            </div>
+            <div>
+                <label htmlFor="editMode">editMode:</label>
+                <Field name="editMode" component="input" type="checkbox"/>
+            </div>
+            <button type="submit">Add car</button>
+        </form>
+
+    </form>
+}
+
+CarAddForm = reduxForm({
+    form: 'addNewCarForm'
+})(CarAddForm)
+
+export default connect(mapStateToProps, {getOrders, changeCar, updateCar,addNewCarForm})(Cars);
+
 

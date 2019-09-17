@@ -11,11 +11,11 @@ export const carAPI = {
 	getCars () {
 		return instance.get(`cars`)
 	},
-	postCar () {
-		return instance.post(`cars`)
+	addCar (newCar) {
+		return instance.post(`cars`,newCar)
 	},
-	updateCar () {
-		return instance.put()
+	updateCar (id,newCar) {debugger
+		return instance.put(`cars/${id}`,newCar)
 	},
 	deleteCar () {
 		return instance.delete()

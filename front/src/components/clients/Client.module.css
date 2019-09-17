@@ -13,7 +13,7 @@
 .key, .value {
     border: 1px solid red;
    /*display: block;*/
-    width: 100px;
+    width: 150px;
     padding: 5px;
     border-radius: 10px;
 
@@ -21,6 +21,7 @@
 .key{
     border: 0;
     text-align: right;
+    color: black;
 }
 .column {
     display: flex;

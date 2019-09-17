@@ -8,11 +8,11 @@ export const ordersAPI = {
 	getOrders (carId) {
 		return instance.get(`orders?carId=${carId}`)
 	},
-	postOrder () {
-		return instance.post(`orders`)
+	addOrder (fakeOrder) {
+		return instance.post(`orders`, fakeOrder)
 	},
-	updateOrder () {
-		return instance.put(`orders`)
+	updateOrder (newOrder, id) {
+		return instance.put(`orders/${id}`,newOrder)//newOrder
 	},
 	deleteOrder () {
 		return instance.delete(`orders`)
