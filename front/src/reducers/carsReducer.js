@@ -5,8 +5,7 @@ const ADD_NEW_CAR = 'stoProject/cars/ADD_NEW_CAR'
 const DELETE_CAR = 'stoProject/cars/DELETE_CAR'
 
 const initialState = {
-    cars: [
-    ],
+    cars: [],
     showFormAddNewCar: false
 }
 
@@ -38,7 +37,7 @@ const carsReducer = (state = initialState, action) => {
         case DELETE_CAR:
             return {
                 ...state,
-                cars: state.cars.filter(c=> c.id!==action.id)
+                cars: state.cars.filter(c => c.id !== action.id)
             };
         default:
             return state

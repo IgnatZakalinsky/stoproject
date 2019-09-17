@@ -14,7 +14,7 @@ export const carAPI = {
 	updateCar (idCar,newCar) {
 		return instance.put(`cars/${idCar}`,newCar)
 	},
-	deleteCar (idCar) {
-		return instance.delete(`cars/${idCar}`)
+	deleteCar (id) {
+		return instance.delete(`cars/${id}`)
 	}
 }

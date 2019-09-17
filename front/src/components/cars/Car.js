@@ -20,6 +20,10 @@ const Car = (props) => {
         props.updateCar(formData.id, formData)
     }
 
+    let deleteCar=()=>{
+        props.deleteCar(props.id)
+    }
+
     return (
         <>
             {isChangeCar
@@ -33,7 +37,7 @@ const Car = (props) => {
                     <div><span>year: {props.year}</span></div>
                     <div><span>vin: {props.vin}</span></div>
                     <button onClick={() => setChangeCar(true)}>Edit</button>
-                    <button onClick={() => props.deleteCar(props.id)}>Delete</button>
+                    <button onClick={deleteCar}>Delete</button>
                 </div>}
         </>
     );

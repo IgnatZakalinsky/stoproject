@@ -17,7 +17,7 @@ function Cars(props) {
         return <Order editModeSuccsess={props.editModeSuccsess} deleteOrder={props.deleteOrder} {...o}/>
     });
 
-    const cars=props.cars.map(c => <Car key={c.id} {...c} deleteCar={props.deleteCar} updateCar={props.updateCar} isChangeCar={props.isChangeCar} changeCar={props.changeCar}/>)
+    const cars=props.cars.map(c => <Car key={c.id} {...c} deleteCar={props.deleteCar} updateCar={props.updateCar} isChangeCar={props.isChangeCar}/>)
 
 
     useEffect(() => {
@@ -70,10 +70,6 @@ let CarAddForm = props => {
             <div>
                 <label htmlFor="vin">vin:</label>
                 <Field name="vin" component="input" type="text"/>
-            </div>
-            <div>
-                <label htmlFor="editMode">editMode:</label>
-                <Field name="editMode" component="input" type="checkbox"/>
             </div>
             <button type="submit">Add car</button>
     </form>

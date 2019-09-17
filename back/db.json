@@ -26,33 +26,6 @@
       "address": "Minsk",
       "email": "ivanov@ivan.com",
       "phone": "+37533435534"
-    },
-    {
-      "firstName": "Ivan",
-      "lastName": "Ivanov",
-      "dob": "2000-01-26",
-      "address": "Minsk",
-      "email": "ivanov@ivan.com",
-      "phone": "+37533435534",
-      "id": 4
-    },
-    {
-      "firstName": "Ivan",
-      "lastName": "Ivanov",
-      "dob": "2000-01-26",
-      "address": "Minsk",
-      "email": "ivanov@ivan.com",
-      "phone": "+37533435534",
-      "id": 5
-    },
-    {
-      "firstName": "Ivan",
-      "lastName": "Ivanov",
-      "dob": "2000-01-26",
-      "address": "Minsk",
-      "email": "ivanov@ivan.com",
-      "phone": "+37533435534",
-      "id": 6
     }
   ],
   "cars": [
@@ -70,39 +43,12 @@
     },
     {
       "clientId": "1",
-      "make": "1234",
-      "model": "1234",
-      "year": "1122223",
-      "vin": "1212",
+      "make": "new",
+      "model": "new",
+      "year": 2019,
+      "vin": 77777,
       "editMode": true,
-      "id": 4
-    },
-    {
-      "clientId": "1",
-      "make": "asasas",
-      "model": "assaasas",
-      "year": "asasasas",
-      "vin": "asasassa",
-      "editMode": false,
       "id": 5
-    },
-    {
-      "clientId": "4",
-      "make": "w",
-      "model": "w",
-      "year": "1",
-      "vin": "1",
-      "editMode": true,
-      "id": 6
-    },
-    {
-      "clientId": "5",
-      "make": "w",
-      "model": "w",
-      "year": "1",
-      "vin": "1",
-      "editMode": true,
-      "id": 7
     }
   ],
   "orders": [
@@ -163,49 +109,6 @@
       "amount": "weewew",
       "status": "cancelled",
       "editMode": false
-    },
-    {
-      "clientId": "5",
-      "amount": 20,
-      "status": "in-progress",
-      "editMode": true,
-      "id": 14
-    },
-    {
-      "clientId": "5",
-      "amount": 20,
-      "status": "in-progress",
-      "editMode": true,
-      "id": 15
-    },
-    {
-      "clientId": "5",
-      "amount": 20,
-      "status": "in-progress",
-      "editMode": true,
-      "id": 16
-    },
-    {
-      "id": 17,
-      "carId": 1,
-      "clientId": "5",
-      "amount": "100000000000",
-      "status": "in-progress",
-      "editMode": false
-    },
-    {
-      "id": 18,
-      "carId": 1,
-      "clientId": "5",
-      "amount": "as",
-      "editMode": false
-    },
-    {
-      "clientId": "6",
-      "amount": 20,
-      "status": "in-progress",
-      "editMode": true,
-      "id": 19
     }
   ]
 }
