@@ -14,7 +14,7 @@ export const ordersAPI = {
 	updateOrder (newOrder, id) {
 		return instance.put(`orders/${id}`,newOrder)//newOrder
 	},
-	deleteOrder () {
-		return instance.delete(`orders`)
+	deleteOrder (id) {
+		return instance.delete(`orders/${id}`)
 	}
 }

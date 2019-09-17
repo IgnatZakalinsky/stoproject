@@ -12,7 +12,12 @@ export const clientsAPI = {
 		return instance.get(`clients?firstName_like=${firstName}&lastName_like=${lastName}`)
 	},
 	postClient () {
-		return instance.post(`clients `)
+		return instance.post(`clients `, {"firstName": "Ivan",
+			"lastName": "Ivanov",
+			"dob": "2000-01-26",
+			"address": "Minsk",
+			"email": "ivanov@ivan.com",
+			"phone": "+37533435534"})
 	},
 	updateClient () {
 		return instance.put(`clients `)
