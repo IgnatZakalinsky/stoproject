@@ -8,6 +8,7 @@ import AddOrder from "../EditOrder/AddOrder";
 import EditOrder from "../EditOrder/EditOrder";
 import {addNewCar, updateCar} from "../../Thunks/carsThunks";
 import {Field, reduxForm} from "redux-form";
+import {editModeSuccsess} from "../../reducers/ordersReducer";
 
 function Cars(props) {
 
@@ -76,6 +77,8 @@ let CarAddForm = props => {
                 <Field name="editMode" component="input" type="checkbox"/>
             </div>
             <button type="submit">Add car</button>
+        </form>
+
     </form>
 }
 
@@ -83,6 +86,6 @@ CarAddForm = reduxForm({
     form: 'addNewCarForm'
 })(CarAddForm)
 
-export default connect(mapStateToProps, {getOrders, changeCar, updateCar,addNewCarForm,addNewCar})(Cars);
+export default connect(mapStateToProps, {getOrders, changeCar, updateCar,addNewCarForm})(Cars);
 
 

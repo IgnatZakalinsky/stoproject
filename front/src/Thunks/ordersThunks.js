@@ -38,3 +38,19 @@ export const updateOrder = (formdata, carId = 1, clientId = 1, id) => async (dis
 }
 
 
+
+
+// export const selectOrder = (newstatus) => async (dispatch) => {
+//     const res = await ordersAPI.selectOrder({//отправляем на сервер
+//
+//             "status": status.newstatus,
+//
+//         },
+//         id);
+//
+//
+//     dispatch(selectOrderSuccess(res.data));//cюда записываем ActionCreator(в скобочкач..
+//     // пишем то что придет с сервера
+// }
+
+
