@@ -45,6 +45,9 @@
       "model": "roadster",
       "year": 2019,
       "vin": "WWDYS2323"
+    },
+    {
+      "id": 3
     }
   ],
   "orders": [
@@ -106,6 +109,27 @@
       "amount": "daDA",
       "status": "in-progress",
       "editMode": false
+    },
+    {
+      "clientId": "1",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": true,
+      "id": 8
+    },
+    {
+      "clientId": "1",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": true,
+      "id": 9
+    },
+    {
+      "clientId": "1",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": true,
+      "id": 10
     }
   ]
 }

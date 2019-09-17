@@ -1,5 +1,5 @@
 import {clientsAPI} from "../api/apiClients";
-import {setClientSuccess} from "../reducers/clientsRreducer";
+import {setClientSuccess, setRedirect} from "../reducers/clientsRreducer";
 import {getCar} from "./carsThunks";
 
 
@@ -13,5 +13,8 @@ export const getClient = (id) => async (dispatch) =>{
     const res = await clientsAPI.getClient(id);
     dispatch(setClientSuccess(res.data));
     dispatch(getCar(res.data[0].id));
-
+}
+export const createNewClient = () => async (dispatch) =>{
+    const res = await clientsAPI.postClient();
+    dispatch(setRedirect(res.data.id));
 }

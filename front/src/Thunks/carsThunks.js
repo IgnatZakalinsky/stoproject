@@ -1,13 +1,6 @@
 import {carAPI} from "../api/apiCars";
-import {addCarSuccess, setCarsSuccess, updateCarSuccess} from "../reducers/carsReducer";
+import {addCarSuccess, deleteCarSuccess, setCarsSuccess, updateCarSuccess} from "../reducers/carsReducer";
 
-
-
-
-// export const getCars = () => async (dispatch, getState) =>{
-// 	const res = await carsAPI.getCars(getState().clients.firstName_lastName);
-// 	dispatch(setCarsSuccess(res.data));
-// }
 
 export const getCar = (id) => async (dispatch) =>{
 	const res = await carAPI.getCar(id);
@@ -17,6 +10,11 @@ export const getCar = (id) => async (dispatch) =>{
 export const updateCar = (id, newCar) => async (dispatch) =>{
 	const res = await carAPI.updateCar(id, newCar);
 	dispatch(updateCarSuccess(newCar));
+}
+
+export const deleteCar = (id) => async (dispatch) =>{
+	const res = await carAPI.deleteCar(id);
+	dispatch(deleteCarSuccess(id));
 }
 
 export const addNewCar = (clientId, car) => async (dispatch) =>{

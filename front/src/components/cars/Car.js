@@ -30,6 +30,7 @@ const Car = (props) => {
                     <div><span>year: {props.year}</span></div>
                     <div><span>vin: {props.vin}</span></div>
                     <button onClick={() => props.changeCar(true)}>Edit</button>
+                    <button onClick={() => props.deleteCar(props.id)}>Delete</button>
                 </div>}
         </>
     );
