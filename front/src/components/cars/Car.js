@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Field, reduxForm} from "redux-form";
 
 
 const Car = (props) => {
+
+    const [isChangeCar, setChangeCar]=useState(false)
 
     const defaultValueForm = {
         id: props.id,
@@ -14,13 +16,13 @@ const Car = (props) => {
     }
 
     let changeCar = (formData) => {
-        props.changeCar(false)
+        setChangeCar(false)
         props.updateCar(formData.id, formData)
     }
 
     return (
         <>
-            {props.isChangeCar
+            {isChangeCar
                 ? <CarForm onSubmit={changeCar} initialValues={defaultValueForm}/>
                 : <div>
                     <div>Car</div>
@@ -30,7 +32,7 @@ const Car = (props) => {
                     <div><span>model: {props.model}</span></div>
                     <div><span>year: {props.year}</span></div>
                     <div><span>vin: {props.vin}</span></div>
-                    <button onClick={() => props.changeCar(true)}>Edit</button>
+                    <button onClick={() => setChangeCar(true)}>Edit</button>
                     <button onClick={() => props.deleteCar(props.id)}>Delete</button>
                 </div>}
         </>

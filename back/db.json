@@ -48,6 +48,14 @@
     },
     {
       "id": 3
+    },
+    {
+      "id": 4,
+      "clientId": "1",
+      "make": "new",
+      "model": "new",
+      "year": 2019,
+      "vin": "77777"
     }
   ],
   "orders": [

@@ -3,7 +3,7 @@ import Order from "../orders/Order";
 import Car from "./Car";
 import {connect} from "react-redux";
 import {getOrders} from "../../Thunks/ordersThunks";
-import {addNewCarForm, changeCar} from "../../reducers/carsReducer";
+import {addNewCarForm} from "../../reducers/carsReducer";
 import AddOrder from "../EditOrder/AddOrder";
 import EditOrder from "../EditOrder/EditOrder";
 import {addNewCar, deleteCar, updateCar} from "../../Thunks/carsThunks";
@@ -84,6 +84,6 @@ CarAddForm = reduxForm({
     form: 'addNewCarForm'
 })(CarAddForm)
 
-export default connect(mapStateToProps, {getOrders, addNewCar, changeCar, updateCar,addNewCarForm, deleteCar})(Cars);
+export default connect(mapStateToProps, {getOrders, addNewCar, updateCar,addNewCarForm, deleteCar})(Cars);
 
 
