@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Order from "../orders/Order";
 import Car from "./Car";
 import {connect} from "react-redux";
-import {getOrders} from "../../Thunks/ordersThunks";
+import {deleteOrder, getOrders} from "../../Thunks/ordersThunks";
 import {addNewCarForm, changeCar} from "../../reducers/carsReducer";
 import AddOrder from "../EditOrder/AddOrder";
 import EditOrder from "../EditOrder/EditOrder";
@@ -12,13 +12,16 @@ import {editModeSuccsess} from "../../reducers/ordersReducer";
 
 function Cars(props) {
 
-    const order = props.orders.map(o => {
-        if (o.editMode === true) return <EditOrder {...o} />
-        return <Order {...o}/>
-    });
+    // const order = props.orders.map(o => {
+    //     if (o.editMode === true) return <EditOrder {...o} />
+    //     return <Order {...o}/>
+    // });
 
     const cars=props.cars.map(c => <Car key={c.id} {...c} deleteCar={props.deleteCar} updateCar={props.updateCar} isChangeCar={props.isChangeCar} changeCar={props.changeCar}/>)
 
+    const order = props.orders.map((o,i) => {
+    	 if(o.editMode === true) return <EditOrder {...o} key={i} selectOrderSuccess={props.selectOrderSuccess} />
+    	return<Order key={i} deleteOrder={props.deleteOrder} editModeSuccsess={props.editModeSuccsess} {...o}/>});
 
     useEffect(() => {
         props.getOrders(props.id)
@@ -77,13 +80,16 @@ let CarAddForm = props => {
                 <Field name="editMode" component="input" type="checkbox"/>
             </div>
             <button type="submit">Add car</button>
-    </form>
+        </form>
+
+
 }
 
 CarAddForm = reduxForm({
     form: 'addNewCarForm'
 })(CarAddForm)
 
+export default connect(mapStateToProps, {deleteOrder,getOrders,editModeSuccsess, changeCar, updateCar,addNewCarForm})(Cars);
 export default connect(mapStateToProps, {getOrders, addNewCar, changeCar, updateCar,addNewCarForm, deleteCar})(Cars);
 
 

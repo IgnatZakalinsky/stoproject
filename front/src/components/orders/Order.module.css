@@ -1,6 +1,6 @@
-.formOrder{
-    /*border: solid 1px green;*/
-    border: 1px solid #ff4227;
+.order{
+    /*border: solid 1px #fd13d9;*/
+    border: 1px solid #fd13d9;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -9,5 +9,5 @@
     align-items: center;
     padding: 5px;
     text-decoration: none;
-    background-color: #13ffc5;
+    background-color: #ffd7b0;
 }

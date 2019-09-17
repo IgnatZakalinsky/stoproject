@@ -1,5 +1,5 @@
 import {ordersAPI} from "../api/apiOrders";
-import {addOrderSuccess, editOrderSuccess, setOrdersSuccess} from "../reducers/ordersReducer";
+import {addOrderSuccess, deleteModeSuccsess, editOrderSuccess, setOrdersSuccess} from "../reducers/ordersReducer";
 
 
 export const getOrders = (carId) => async (dispatch) => {
@@ -40,17 +40,10 @@ export const updateOrder = (formdata, carId = 1, clientId = 1, id) => async (dis
 
 
 
-// export const selectOrder = (newstatus) => async (dispatch) => {
-//     const res = await ordersAPI.selectOrder({//отправляем на сервер
-//
-//             "status": status.newstatus,
-//
-//         },
-//         id);
-//
-//
-//     dispatch(selectOrderSuccess(res.data));//cюда записываем ActionCreator(в скобочкач..
-//     // пишем то что придет с сервера
-// }
+export const deleteOrder = (id) => async (dispatch) => {
+    const res = await ordersAPI.deleteOrder(id)//пишем название с API
+    dispatch(deleteModeSuccsess(id));//cюда записываем ActionCreator(в скобочкач..
+    // пишем то что придет с сервера
+}
 
 

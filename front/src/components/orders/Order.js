@@ -1,14 +1,18 @@
 import React from 'react';
+import styles from  './Order.module.css'
 
 function Order(props) {
-
 	let editOrder = () =>{
          props.editModeSuccsess(props.id)
 	}
 
+	let deleteOrder = () =>{
+		props.deleteOrder(props.id)
+	}
+
 	return (
 
-		<div >
+		<div className={styles.order} >
 			<div>Order</div>
 			<div><span>id: {props.id}</span></div>
 			<div><span>carId: {props.carId}</span></div>
@@ -18,6 +22,7 @@ function Order(props) {
 
 
 			<button onClick={editOrder}>Edit</button>
+			<button onClick={deleteOrder}>Delete</button>
 
 		</div>
 

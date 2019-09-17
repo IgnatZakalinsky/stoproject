@@ -1,7 +1,6 @@
 import React from 'react';
 import {Field, reduxForm} from "redux-form";
 
-
 const Car = (props) => {
 
     const defaultValueForm = {
@@ -21,7 +20,7 @@ const Car = (props) => {
     return (
         <>
             {props.isChangeCar
-                ? <CarForm onSubmit={changeCar} initialValues={defaultValueForm}/>
+                ? <CarForm onSubmit={changeCar} initialValues={props.car}/>
                 : <div>
                     <div>Car</div>
                     <div><span>id: {props.id}</span></div>
