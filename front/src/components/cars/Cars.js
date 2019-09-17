@@ -12,16 +12,16 @@ import {editModeSuccsess} from "../../reducers/ordersReducer";
 
 function Cars(props) {
 
-    const order = props.orders.map(o => {
-        if (o.editMode === true) return <EditOrder {...o} />
-        return <Order {...o}/>
-    });
+    // const order = props.orders.map(o => {
+    //     if (o.editMode === true) return <EditOrder {...o} />
+    //     return <Order {...o}/>
+    // });
 
     const cars=props.cars.map(c => <Car {...c} updateCar={props.updateCar} isChangeCar={props.isChangeCar} changeCar={props.changeCar}/>)
 
     const order = props.orders.map((o,i) => {
     	 if(o.editMode === true) return <EditOrder {...o} key={i} selectOrderSuccess={props.selectOrderSuccess} />
-    	return<Order key={i} editModeSuccsess={props.editModeSuccsess} {...o}/>});
+    	return<Order key={i} deleteOrder={props.deleteOrder} editModeSuccsess={props.editModeSuccsess} {...o}/>});
 
     useEffect(() => {
         props.getOrders(props.id)
@@ -82,13 +82,13 @@ let CarAddForm = props => {
             <button type="submit">Add car</button>
         </form>
 
-    </form>
+
 }
 
 CarAddForm = reduxForm({
     form: 'addNewCarForm'
 })(CarAddForm)
 
-export default connect(mapStateToProps, {getOrders,editModeSuccsess, changeCar, updateCar,addNewCarForm})(Cars);
+export default connect(mapStateToProps, {deleteOrder,getOrders,editModeSuccsess, changeCar, updateCar,addNewCarForm})(Cars);
 
 
