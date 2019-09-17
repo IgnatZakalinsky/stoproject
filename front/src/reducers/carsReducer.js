@@ -2,25 +2,10 @@ const SET_CARS = 'stoProject/cars/SET_CARS'
 const CHANGE_CAR = 'stoProject/cars/CHANGE_CAR'
 const ADD_NEW_FORM_CAR = 'stoProject/cars/ADD_NEW_FORM_CAR'
 const UPDATE_CAR = 'stoProject/cars/UPDATE_CAR'
+const ADD_NEW_CAR = 'stoProject/cars/ADD_NEW_CAR'
 
 const initialState = {
     cars: [
-        {
-            "id": 1,
-            "clientId": 2,
-            "make": "reno",
-            "model": "stepway",
-            "year": 2001,
-            "vin": "HHDYS2323"
-        },
-        {
-            "id": 2,
-            "clientId": 1,
-            "make": "tesla",
-            "model": "rodster 2",
-            "year": 2019,
-            "vin": "WWDYS2323"
-        }
     ],
     isChangeCar: false,
     showFormAddNewCar: false
@@ -51,6 +36,11 @@ const carsReducer = (state = initialState, action) => {
                     return c
                 })
             };
+        case ADD_NEW_CAR:debugger
+            return {
+                ...state,
+                cars: [...state.cars, action.newCar]
+            };
         default:
             return state
     }
@@ -60,5 +50,6 @@ export const setCarsSuccess = (cars) => ({type: SET_CARS, cars})
 export const changeCar = (status) => ({type: CHANGE_CAR, status})
 export const addNewCarForm = (status) => ({type: ADD_NEW_FORM_CAR, status})
 export const updateCarSuccess = (newCar) => ({type: UPDATE_CAR, newCar})
+export const addCarSuccess = (newCar) => ({type: ADD_NEW_CAR, newCar})
 
 export default carsReducer

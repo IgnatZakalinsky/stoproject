@@ -42,10 +42,9 @@
       "id": 2,
       "clientId": 1,
       "make": "tesla",
-      "model": "roadster 2",
+      "model": "roadster",
       "year": 2019,
-      "vin": "WWDYS2323",
-      "editMode": false
+      "vin": "WWDYS2323"
     }
   ],
   "orders": [

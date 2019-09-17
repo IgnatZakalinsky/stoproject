@@ -6,27 +6,25 @@ import {getOrders} from "../../Thunks/ordersThunks";
 import {addNewCarForm, changeCar} from "../../reducers/carsReducer";
 import AddOrder from "../EditOrder/AddOrder";
 import EditOrder from "../EditOrder/EditOrder";
-import {updateCar} from "../../Thunks/carsThunks";
+import {addNewCar, updateCar} from "../../Thunks/carsThunks";
 import {Field, reduxForm} from "redux-form";
 
 function Cars(props) {
-
-    //useE getOr(props.carId)
-
-    // useEffect(() => {
-    // 	props.getCars()
-    // }, []);
 
     const order = props.orders.map(o => {
         if (o.editMode === true) return <EditOrder {...o} />
         return <Order {...o}/>
     });
 
+    const cars=props.cars.map(c => <Car {...c} updateCar={props.updateCar} isChangeCar={props.isChangeCar} changeCar={props.changeCar}/>)
+
+
     useEffect(() => {
         props.getOrders(props.id)
     }, [props.id])
 
-    let addNewCar = () => {
+    let addNewCar = (newCar) => {
+        props.addNewCar(props.clientId,newCar)
         props.addNewCarForm(false)
     }
 
@@ -37,8 +35,7 @@ function Cars(props) {
                 : <button onClick={()=>props.addNewCarForm(true)}>add new car </button>
             }
 
-
-            {props.cars.map(c => <Car car={c} {...props} />)}
+            {cars}
             {order}
             <AddOrder carId={props.id} clientId={props.clientId}/>
         </div>
@@ -57,7 +54,7 @@ let mapStateToProps = (state) => {
 let CarAddForm = props => {
     const {handleSubmit} = props
     return <form onSubmit={handleSubmit}>
-        <form onSubmit={handleSubmit}>
+            <h3>All fields must be filled</h3>
             <div>
                 <label htmlFor="make">make:</label>
                 <Field name="make" component="input" type="text"/>
@@ -79,15 +76,13 @@ let CarAddForm = props => {
                 <Field name="editMode" component="input" type="checkbox"/>
             </div>
             <button type="submit">Add car</button>
-        </form>
-
     </form>
 }
 
 CarAddForm = reduxForm({
-    form: 'carForm'
+    form: 'addNewCarForm'
 })(CarAddForm)
 
-export default connect(mapStateToProps, {getOrders, changeCar, updateCar,addNewCarForm})(Cars);
+export default connect(mapStateToProps, {getOrders, changeCar, updateCar,addNewCarForm,addNewCar})(Cars);
 
 
