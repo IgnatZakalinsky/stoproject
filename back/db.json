@@ -39,14 +39,6 @@
       "editMode": false
     },
     {
-      "id": 2,
-      "clientId": 1,
-      "make": "tesla",
-      "model": "roadster",
-      "year": 2019,
-      "vin": "WWDYS2323"
-    },
-    {
       "id": 3
     },
     {
@@ -60,54 +52,9 @@
   ],
   "orders": [
     {
-      "id": 1,
-      "carId": 2,
-      "clientId": 1,
-      "amount": "111111",
-      "status": "cancelled",
-      "editMode": false
-    },
-    {
-      "id": 2,
-      "carId": 2,
-      "clientId": 1,
-      "amount": 20,
-      "status": "cancelled",
-      "editMode": false
-    },
-    {
       "id": 3,
       "carId": 1,
       "clientId": 1,
-      "editMode": false
-    },
-    {
-      "id": 4,
-      "carId": 2,
-      "clientId": "1",
-      "status": "in-progress",
-      "editMode": false
-    },
-    {
-      "carId": 2,
-      "clientId": "1",
-      "amount": 20,
-      "status": "in-progress",
-      "editMode": true,
-      "id": 5
-    },
-    {
-      "carId": 2,
-      "clientId": "1",
-      "amount": 20,
-      "status": "in-progress",
-      "editMode": true,
-      "id": 6
-    },
-    {
-      "id": 7,
-      "carId": 2,
-      "clientId": "1",
       "editMode": false
     },
     {
@@ -130,6 +77,30 @@
       "status": "in-progress",
       "editMode": true,
       "id": 10
+    },
+    {
+      "id": 11,
+      "carId": 1,
+      "clientId": "1",
+      "amount": "SAS",
+      "status": "in-progress",
+      "editMode": false
+    },
+    {
+      "id": 12,
+      "carId": 1,
+      "clientId": "1",
+      "amount": "12000",
+      "status": "in-progress",
+      "editMode": false
+    },
+    {
+      "id": 13,
+      "carId": 1,
+      "clientId": "2",
+      "amount": "weewew",
+      "status": "cancelled",
+      "editMode": false
     }
   ]
 }
