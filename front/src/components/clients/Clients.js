@@ -11,7 +11,7 @@ function Clients(props) {
         props.getClients('', '')
     },[])
 
-    const clients = props.clients.map(c => <Client {...c}/>);
+    const clients = props.clients.map(c  => <Client {...c}/>);
 
     console.log("dksjhgkjdsgk" +" " + props.red)
    if (props.red === true) return <Redirect to={`clientProfile/${props.redid}`} />;

@@ -12,7 +12,7 @@ export const ordersAPI = {
 		return instance.post(`orders`, fakeOrder)
 	},
 	updateOrder (newOrder, id) {
-		return instance.put(`orders/${id}`,newOrder)//newOrder
+		return instance.put(`orders/${id}`,newOrder)
 	},
 	deleteOrder (id) {
 		return instance.delete(`orders/${id}`)

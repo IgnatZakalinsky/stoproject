@@ -9,7 +9,6 @@ function Order(props) {
 	let deleteOrder = () =>{
 		props.deleteOrder(props.id)
 	}
-
 	return (
 
 		<div className={styles.order} >
@@ -17,6 +16,8 @@ function Order(props) {
 			<div><span>id: {props.id}</span></div>
 			<div><span>carId: {props.carId}</span></div>
 			<div><span>clientId: {props.clientId}</span></div>
+			<div><span>Date: {props.date}</span></div>
+
 			<div><span>amount: {props.amount}</span></div>
 			<div>status: <span>{props.status}</span></div>
 

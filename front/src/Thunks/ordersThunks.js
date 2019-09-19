@@ -1,7 +1,7 @@
 import {ordersAPI} from "../api/apiOrders";
 import {addOrderSuccess, deleteModeSuccsess, editOrderSuccess, setOrdersSuccess} from "../reducers/ordersReducer";
 
-
+// первая стрелка ThunkCreator  а вторая стрелка  thunk
 export const getOrders = (carId) => async (dispatch) => {
     const res = await ordersAPI.getOrders(carId);
     dispatch(setOrdersSuccess(res.data));
@@ -13,6 +13,7 @@ export const addOrder = (carId, clientId) => async (dispatch) => {
         "carId": carId,
         "clientId": clientId,
         "amount": 20,
+        "date": "12/12/12",
         "status": "in-progress",
         "editMode": true
     });
@@ -26,6 +27,7 @@ export const updateOrder = (formdata, carId = 1, clientId = 1, id) => async (dis
             id: id,
             "carId": carId,
             "clientId": clientId,
+            "date": formdata.date,
             "amount": formdata.amount,
             "status": formdata.status,
             "editMode": false
@@ -36,8 +38,6 @@ export const updateOrder = (formdata, carId = 1, clientId = 1, id) => async (dis
     dispatch(editOrderSuccess(res.data));//cюда записываем ActionCreator(в скобочкач..
     // пишем то что придет с сервера
 }
-
-
 
 
 export const deleteOrder = (id) => async (dispatch) => {

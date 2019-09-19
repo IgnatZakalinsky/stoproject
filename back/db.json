@@ -26,88 +26,92 @@
       "address": "Minsk",
       "email": "ivanov@ivan.com",
       "phone": "+37533435534"
+    },
+    {
+      "id": 4,
+      "firstName": "1",
+      "lastName": "1",
+      "dob": "1",
+      "address": "1",
+      "email": "1",
+      "phone": "1"
     }
   ],
   "cars": [
     {
-      "id": 1,
-      "clientId": 2,
-      "make": "reno",
-      "model": "stepway",
-      "year": 2001,
-      "vin": "HHDYS2323",
-      "editMode": false
-    },
-    {
       "id": 3
     },
     {
-      "clientId": "1",
-      "make": "new",
-      "model": "new",
+      "clientId": "5",
+      "make": "new car",
+      "model": "new model",
       "year": 2019,
       "vin": 77777,
-      "editMode": true,
-      "id": 5
+      "id": 4
     }
   ],
   "orders": [
     {
-      "id": 3,
-      "carId": 1,
-      "clientId": 1,
+      "id": 1,
+      "carId": 16,
+      "clientId": "3",
+      "amount": "1",
       "editMode": false
     },
     {
-      "clientId": "1",
+      "id": 2,
+      "carId": 16,
+      "clientId": "3",
+      "amount": "12",
+      "status": "in-progress",
+      "editMode": false
+    },
+    {
+      "id": 3,
+      "carId": 16,
+      "clientId": "3",
+      "amount": "12",
+      "status": "completed",
+      "editMode": false
+    },
+    {
+      "id": 5,
+      "carId": 17,
+      "clientId": "3",
+      "amount": "1",
+      "editMode": false
+    },
+    {
+      "carId": 16,
+      "clientId": "3",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": true,
+      "id": 6
+    },
+    {
+      "carId": 16,
+      "clientId": "3",
+      "amount": 20,
+      "status": "in-progress",
+      "editMode": true,
+      "id": 7
+    },
+    {
+      "carId": 16,
+      "clientId": "3",
       "amount": 20,
       "status": "in-progress",
       "editMode": true,
       "id": 8
     },
     {
+      "id": 9,
+      "carId": 18,
       "clientId": "1",
-      "amount": 20,
+      "date": "12/28/12",
+      "amount": "1",
       "status": "in-progress",
-      "editMode": true,
-      "id": 9
-    },
-    {
-      "clientId": "1",
-      "amount": 20,
-      "status": "in-progress",
-      "editMode": true,
-      "id": 10
-    },
-    {
-      "id": 11,
-      "carId": 1,
-      "clientId": "1",
-      "amount": "SAS",
-      "status": "in-progress",
-      "editMode": false
-    },
-    {
-      "id": 12,
-      "carId": 1,
-      "clientId": "1",
-      "amount": "12000",
-      "status": "in-progress",
-      "editMode": true
-    },
-    {
-      "id": 11,
-      "carId": 1,
-      "clientId": "1",
-      "amount": "12000",
-      "editMode": false
-    },
-    {
-      "id": 13,
-      "carId": 1,
-      "clientId": "2",
-      "amount": "weewew",
-      "status": "cancelled",
       "editMode": false
     }
   ]

@@ -1,11 +1,13 @@
 const SET_CLIENTS = 'stoProject/clients/SET_CLIENTS'
 const SET_REDIRECT = 'stoProject/clients/SET_REDIRECT'
+const EDIT_CLIENT = 'stoProject/clients/EDIT_CLIENT'
 
 const initialState = {
     clients: [{}],
     firstName_lastName: '',
     red: false,
-    redid: 1
+    redid: 1,
+    editMode: false
 }
 
 const clientReducer = (state = initialState, action) => {
@@ -13,13 +15,23 @@ const clientReducer = (state = initialState, action) => {
         case SET_CLIENTS:
             return {
                 ...state,
-                clients: action.clients
+                clients: action.clients,
+                red: false
             };
         case SET_REDIRECT:
             return {
                 ...state,
                 redid: action.id,
-                red: true
+                red: true,
+                editMode: true
+            };
+        case EDIT_CLIENT:
+            return {
+                ...state,
+                clients: [action.client],
+                editMode: false
+
+
             };
         default:
             return state
@@ -28,6 +40,6 @@ const clientReducer = (state = initialState, action) => {
 
 export const setClientSuccess = (clients) => ({type: SET_CLIENTS, clients})
 export const setRedirect = (id) => ({type: SET_REDIRECT, id})
-
+export const editClientSuccess = (client) => ({type: EDIT_CLIENT, client})
 
 export default clientReducer
