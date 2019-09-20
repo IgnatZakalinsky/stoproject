@@ -3,7 +3,7 @@ import styles from './Client.module.css'
 import {NavLink} from "react-router-dom";
 
 function Client(props) {
-    
+
     const data = Object.entries(props).map((d, i) => {
         if(d[0] !== "id") return (
             <div className={styles.column} key={i}>

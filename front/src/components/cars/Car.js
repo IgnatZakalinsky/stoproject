@@ -53,7 +53,7 @@ const Car = (props) => {
                     <div><span>year: {props.year}</span></div>
                     <div><span>vin: {props.vin}</span></div>
                     <button onClick={() => setChangeCar(true)}>Edit</button>
-                    <button onClick={deleteCar}>Delete</button>
+                    <button onClick={deleteCar} disabled={props.orders.length !== 0}>Delete</button>
                     {order}
                     <AddOrder carId={props.id} clientId={props.clientId}/>
 

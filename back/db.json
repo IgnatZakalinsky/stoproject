@@ -2,21 +2,21 @@
   "clients": [
     {
       "id": 1,
-      "firstName": "Ivan",
-      "lastName": "Ivanov",
-      "dob": "2000-01-26",
-      "address": "Minsk",
-      "email": "ivanov@ivan.com",
-      "phone": "+37533435534"
+      "firstName": "1",
+      "lastName": "1",
+      "dob": "1",
+      "address": "1",
+      "email": "1",
+      "phone": "1"
     },
     {
       "id": 3,
-      "firstName": "Neko",
-      "lastName": "Nekovich",
-      "dob": "2000-01-26",
-      "address": "Minsk",
-      "email": "ivanov@ivan.com",
-      "phone": "+37533435534"
+      "firstName": "1",
+      "lastName": "1",
+      "dob": "1",
+      "address": "1",
+      "email": "1",
+      "phone": "1"
     },
     {
       "id": 2,
@@ -35,6 +35,60 @@
       "address": "1",
       "email": "1",
       "phone": "1"
+    },
+    {
+      "id": 5,
+      "firstName": "1",
+      "lastName": "1",
+      "dob": "1",
+      "address": "1",
+      "email": "1",
+      "phone": "1"
+    },
+    {
+      "id": 6,
+      "firstName": "1",
+      "lastName": "1",
+      "dob": "1",
+      "address": "1",
+      "email": "1",
+      "phone": "1"
+    },
+    {
+      "id": 7,
+      "firstName": "1",
+      "lastName": "1",
+      "dob": "1",
+      "address": "1",
+      "email": "11",
+      "phone": "1"
+    },
+    {
+      "id": 8,
+      "firstName": "1",
+      "lastName": "1",
+      "dob": "1",
+      "address": "1",
+      "email": "1",
+      "phone": "1"
+    },
+    {
+      "firstName": "Ivan",
+      "lastName": "Ivanov",
+      "dob": "2000-01-26",
+      "address": "Minsk",
+      "email": "ivanov@ivan.com",
+      "phone": "+37533435534",
+      "id": 9
+    },
+    {
+      "firstName": "Ivan",
+      "lastName": "Ivanov",
+      "dob": "2000-01-26",
+      "address": "Minsk",
+      "email": "ivanov@ivan.com",
+      "phone": "+37533435534",
+      "id": 10
     }
   ],
   "cars": [
@@ -43,74 +97,36 @@
     },
     {
       "clientId": "5",
-      "make": "new car",
-      "model": "new model",
-      "year": 2019,
-      "vin": 77777,
+      "make": "1",
+      "model": "1",
+      "year": "1",
+      "vin": "1",
       "id": 4
+    },
+    {
+      "clientId": "8",
+      "make": "1",
+      "model": "1",
+      "year": "1",
+      "vin": "1",
+      "id": 6
+    },
+    {
+      "clientId": "3",
+      "make": "1",
+      "model": "1",
+      "year": "1",
+      "vin": "1",
+      "id": 7
     }
   ],
   "orders": [
     {
       "id": 1,
-      "carId": 16,
+      "carId": 7,
       "clientId": "3",
-      "amount": "1",
-      "editMode": false
-    },
-    {
-      "id": 2,
-      "carId": 16,
-      "clientId": "3",
-      "amount": "12",
-      "status": "in-progress",
-      "editMode": false
-    },
-    {
-      "id": 3,
-      "carId": 16,
-      "clientId": "3",
-      "amount": "12",
-      "status": "completed",
-      "editMode": false
-    },
-    {
-      "id": 5,
-      "carId": 17,
-      "clientId": "3",
-      "amount": "1",
-      "editMode": false
-    },
-    {
-      "carId": 16,
-      "clientId": "3",
-      "amount": 20,
-      "status": "in-progress",
-      "editMode": true,
-      "id": 6
-    },
-    {
-      "carId": 16,
-      "clientId": "3",
-      "amount": 20,
-      "status": "in-progress",
-      "editMode": true,
-      "id": 7
-    },
-    {
-      "carId": 16,
-      "clientId": "3",
-      "amount": 20,
-      "status": "in-progress",
-      "editMode": true,
-      "id": 8
-    },
-    {
-      "id": 9,
-      "carId": 18,
-      "clientId": "1",
       "date": "12/28/12",
-      "amount": "1",
+      "amount": "12",
       "status": "in-progress",
       "editMode": false
     }

@@ -1,8 +1,13 @@
 import {clientsAPI} from "../api/apiClients";
-import {editClientSuccess, setClientSuccess, setRedirect} from "../reducers/clientsRreducer";
+import {
+    editClientSuccess,
+    editModeSuccess,
+    editModeSuccess2,
+    setClientSuccess,
+    setRedirect
+} from "../reducers/clientsRreducer";
 import {getCar} from "./carsThunks";
 import {clearOrderSuccsess} from "../reducers/ordersReducer";
-import {ordersAPI} from "../api/apiOrders";
 
 
 
@@ -11,6 +16,7 @@ export const getClients = (firstName,lastName) => async (dispatch) =>{
     const res = await clientsAPI.getClients(firstName,lastName );
     dispatch(setClientSuccess(res.data));
     dispatch(clearOrderSuccsess())
+    dispatch(editModeSuccess2())
 }
 export const getClient = (id) => async (dispatch) =>{
     const res = await clientsAPI.getClient(id);

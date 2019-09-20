@@ -5,6 +5,7 @@ import Client from "../clients/Client";
 import {getClient} from "../../Thunks/clientsThunks";
 import {getCar} from "../../Thunks/carsThunks";
 import EditClients from "../clients/EditClient";
+import {editModeSuccess} from "../../reducers/clientsRreducer";
 
 function ClientProfile(props) {
 //useE getCar(props.clientId
@@ -17,7 +18,8 @@ function ClientProfile(props) {
 		<div>
 			{props.editMode
 				? <EditClients  {...props.clients[0]}/>
-			: <Client {...props.clients[0]} /> }
+			: <> <Client {...props.clients[0]} />
+			<button onClick={props.editModeSuccess}>Edit</button></>}
 
 			<Cars cars={props.cars} clientId={props.id}/>
 		</div>
@@ -32,4 +34,4 @@ let mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, {getClient,getCar})(ClientProfile);
+export default connect(mapStateToProps, {getClient,getCar,editModeSuccess})(ClientProfile);
